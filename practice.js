@@ -10,25 +10,23 @@
 
 // use _.each to create a copy of the given array.
 var moreFruits = function(fruits) {
-  var results = [];
-
-  _.each(fruits, function(fruit, index, collection) {
-    results.push(fruit);
+  var result = [];
+  _.each(fruits, function (fruit) {
+    result.push(fruit);
   });
-
-  return results;
+  return result;
 };
 
 // use _.each to traverse the number array and determine
 // which are multiples of five.
 var multiplesOfFive = function(numbers) {
-  var sum = 0;
-  _.each(numbers, function(num) {
+  var total = 0;
+  _.each(numbers, function (num) {
     if (num % 5 === 0) {
-      sum++;
+      total++;
     }
   });
-  return sum;
+  return total;
 };
 
 /*
@@ -47,12 +45,16 @@ var onlyOneFruit = function(fruits, targetFruit) {
 // use _.filter to return the fruits array with only fruits
 // starting with the letter 'P'.
 var startsWith = function(fruits, letter) {
-
+  return _.filter(fruits, function (fruit) {
+    return fruit[0] === letter;
+  });
 };
 
 // return a filtered array containing only cookie-type desserts.
 var cookiesOnly = function(desserts) {
-
+  return _.filter(desserts, function (dessert) {
+    return typeof dessert === 'cookie';
+  });
 };
 
 /*
